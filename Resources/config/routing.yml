@@ -1,0 +1,19 @@
+CodopenexRssAggregatorBundle_feed_show:
+    pattern:  /rss/{url}
+    defaults: { _controller: CodopenexRssAggregatorBundle:Feed:show, url: http://feeds.bbci.co.uk/news/rss.xml }
+    requirements:
+        _method:  GET
+        url: ((mailto\:|(news|(ht|f)tp(s?))\://){1}\S+)
+
+CodopenexRssAggregatorBundle_feed_showfeeds:
+    pattern:  /rss/show-feeds
+    defaults: { _controller: CodopenexRssAggregatorBundle:Feed:showfeeds }
+    requirements:
+        _method:  GET
+
+CodopenexRssAggregatorBundle_feed_analyze:
+    pattern:  /rss/analyze/{url}
+    defaults: { _controller: CodopenexRssAggregatorBundle:Feed:analyze, url: http://feeds.bbci.co.uk/news/rss.xml }
+    requirements:
+        _method:  GET
+        url: ((mailto\:|(news|(ht|f)tp(s?))\://){1}\S+)

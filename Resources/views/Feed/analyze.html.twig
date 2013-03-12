@@ -1,0 +1,26 @@
+{# src/Codopenex/RssAggregatorBundle/Resouces/views/Feed/analyze.html.twig #}
+{% extends 'XperedonBlogBundle::layout.html.twig' %}
+
+{% block title %}RSS Feed Analyzer{% endblock %}
+
+{% block body %}
+	{% for node in nodes %}
+        <article class="feed">
+            <header>
+                <h2>{{ node }}</h2>
+            </header>
+        </article>
+    {% endfor %}
+    {{ rssdoc.rss.channel.title }}<br />
+    {{ feed.title }}<br />
+    {{ feed.link }}<br />
+    {{ feed.description }}<br />
+    {{ feed.language }}<br />
+    {{ feed.lastBuildDate }}<br />
+    {{ feed.ttl }}<br />
+    {{ feed.imageTitle }}<br />
+    {{ feed.imageUrl }}<br />
+    {{ feed.imageLink }}<br />
+    {{ feed.imageDescription }}<br />
+{% endblock %}
+
